@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        *, :root {
+            font-family: 'Inter', sans-serif;
+            font-synthesis: none;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-text-size-adjust: 100%;
+            }
+
+        .card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #2a1b38;
+            border-radius: 20px;
+            margin-top: 64px;
+            padding: 64px 0;
+        }
+
+        .formfield {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            flex-direction: column;
+        }
+
+        .info-field {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            width: 50%;
+            margin: 10px 0px;
+            gap: 5px;
+            font-size: 24px;
+        }
+
+        body {
+            background-color: #1e1629;
+        }
+
+        input[type="text"] {
+            outline: none;
+            background-color: #402b53;
+            border: 0;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #e2e2e2;
+            align-items: center;
+        }
+
+        input[type="number"] {
+            width: 32px;
+            text-align: center;
+            outline: none;
+            background-color: #402b53;
+            border: 1px solid ;
+            border-radius: 10px;
+            padding: 10px 20px;
+            color: #e2e2e2;
+            border: 0;
+            font-size: 18px;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .btn {
+            appearance: none;
+            padding: 14px 24px;
+            letter-spacing: 3px;
+            font-weight: 800;
+            border-radius: 20px;
+            color: #18131f;
+            background-color: rgb(33, 247, 44);
+            box-shadow: 0px 10px 40px -12px #20e440b0;
+            border: none;
+            cursor: pointer;
+        }
+
+        label {
+            color: #e2e2e2;
+        }
+
+        .field-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 50%;
+            margin: 10px 0px;
+            gap: 5px;
+            font-size: 24px;
+            margin-top: 32px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            margin-bottom: 24px;
+            color: rgb(36, 228, 46);
+        }
+
+        .final {
+            display: flex;
+            justify-content: center;
+            font-size: 18px;
+            color: #e2e2e2;
+            align-items: center;
+            flex-direction: column;
+            margin: 24px;
+            max-width: 500px;
+            text-align: center
+        }
+
+    </style>
+</head>
+<body>
+    <div class="formfield">
+        <div class="card">
+            <div class="header"> 
+                <h2> Exercício Alura </h2>
+            </div>
+            <div class="info-field">
+                <label for="nome-usuario"> Informe seu nome </label>
+                <input type="text" name="nome-usuario" id="user" required autocomplete="off" >
+            </div>
+            <div class="info-field">
+                <label for="idade"> Informe sua idade </label>
+                <input type="number" name="idade" id="age" min="1" maxlength="3" required autocomplete="off">
+            </div>
+            <div class="info-field">
+                <label for="lang">  Qual linguagem de programação você está estudando? </label>
+                <input type="text" name="lang" id="language" autocomplete="off" required>
+            </div>
+            <div class="field-btn">
+                <input type="button" class="btn" value="CONFIRMAR" onclick="resultado()">
+            </div>
+            <div class="final">
+                <h2 id="textFinal"></h2>
+                <h4 id="textPrompt"></h4>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('input[type="number"]').forEach(function(input) {
+            input.addEventListener('input', function() {
+                const maxLength = parseInt(this.getAttribute('maxlength'));
+                if (this.value.length > maxLength) {
+                    this.value = this.value.slice(0, maxLength);
+                }
+
+                if(this.value < 0){
+                    this.value = '';
+                }
+            });
+        });
+
+        function resultado() {
+            const nome = document.querySelector('#user').value;
+            const age = document.querySelector('#age').value;
+            const langProg = document.querySelector('#language').value;
+
+            const resposta = ` Olá ${nome}, você tem ${age} anos e está aprendendo ${langProg} `;
+            const h1 = document.querySelector('#textFinal');
+
+            let resultPrompt;
+            
+            if(langProg && age && nome){
+                h1.textContent = resposta;
+                resultPrompt = prompt(` Você está gostando de estudar ${langProg}? Digite 1 para SIM e 2 para NÃO`);
+            } else {
+                alert('Preencha todos os campos');
+            }
+           
+            const textPrompt = document.querySelector('#textPrompt');
+
+            if(resultPrompt == 1){
+                textPrompt.textContent = `Que bom que está gostando de ${langProg}.😁`;
+            } else {
+                textPrompt.textContent = `Ah, que pena.😔`;
+            } 
+        }
+        
+        
+
+    </script>
+</body>
+</html>
