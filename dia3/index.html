@@ -85,6 +85,10 @@
             border: 0;
             border-radius: 64px;
             padding: 10px 24px;
+            cursor: pointer;
+            letter-spacing: 2px;
+            font-weight: 700;
+            box-shadow: 0px 0px 20px -1px rgb(27, 248, 45);
         }
 
         #btn-cara {
@@ -116,6 +120,8 @@
             opacity: 0;
         }
 
+        
+
     </style>
 </head>
 <body>
@@ -142,26 +148,30 @@
         </div>
     </div>
     <script>
-            function cara() {
-                const escolha = document.querySelector('#escolhaFinal')
-                escolha.textContent = `Cara`
-                return ladoCara = 1
-            }
-            function coroa() {
-                const escolha = document.querySelector("#escolhaFinal")
-                escolha.textContent = `Coroa`
-                return ladoCoroa = 0
+        let reiniciou = false;
+
+        function cara() {
+            const escolha = document.querySelector('#escolhaFinal')
+            escolha.textContent = `Cara`
+            return ladoCara = 1
         }
-        console.log(ladoCoroa, "ladocoroa") 
+
+        function coroa() {
+            const escolha = document.querySelector("#escolhaFinal")
+            escolha.textContent = `Coroa`
+            return ladoCoroa = 0
+        }
+
+        
+        
         function iniciar() {
             let moedaEscolhida = document.querySelector('#moeda')
-            console.log(moedaEscolhida, 'moeda')
+            
             const h2 = document.querySelector('#final')
+
             const numero = Math.floor(Math.random() * 2);
             let escolha = document.querySelector('#escolhaFinal').textContent
-            console.log(escolha, 'escolha')  
-            console.log(numero, 'numero')
-            
+
                 
             if(escolha == "Cara" || escolha == "cara") {
                 escolha = 1
@@ -170,10 +180,9 @@
             }
             
             if(escolha === numero) {
-                console.log(escolha, 'escolha')
-                h2.textContent = `Parabens você ganhou`
+                h2.textContent = `Parabens você ganhou `
             } else {
-                h2.textContent = `Você perdeu`                
+                h2.textContent = `Você perdeu`               
             };
 
             if(escolha === "") {
@@ -182,15 +191,25 @@
 
             if(numero === 1) {
                 moedaEscolhida.src = document.querySelector('#img-moeda-cara').src
-            } if(numero === 0) {
+            }else if(numero === 0) {
                 moedaEscolhida.src = document.querySelector('#img-moeda-coroa').src
             } 
             
-            setTimeout(() => {
-                    moedaEscolhida.src = document.querySelector('#moeda-girando-gif').src
-                    h2.textContent = ``
+            if(!reiniciou) {
+                reiniciou = true;
+
+                setTimeout(() => {
+                    moedaEscolhida.src = document.querySelector('#moeda-girando-gif').src;
+                    h2.textContent = ``;
+
+                    reiniciou = false;
                 }, 2000);
+            }
+            
         } 
+
+
+        
         
     </script>
 </body>
