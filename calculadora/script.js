@@ -124,9 +124,7 @@ document.querySelectorAll('.painel > div').forEach(function (div) { //aqui pegue
 
                 break;
             case '.':
-                if (displayText.value.length == 1 && displayText.value == 0) {
-                    displayText.value = '0'
-                } else displayText.value += '.'
+                displayText.value += '.'
                 break;
             default:
 
