@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+*,
+:root {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+.painel {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
+    max-width: 300px;
+}
+
+div {
+    user-select: none;
+    margin: 1px;
+    font-size: 32px;
+}
+
+#display {
+    width: 282px;
+    height: 50px;
+    font-size: 32px;
+    text-align: end;
+    outline: 0;
+    border: 0;
+    background-color: rgb(204, 204, 204);
+    cursor: default;
+}
+
+.text-display {
+    cursor: pointer;
+    background-color: rgb(204, 204, 204);
+    grid-area: 1 / 1 / 2 / 5;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    border-radius: 12px;
+}
+
+.clear {
+    cursor: pointer;
+    background-color: rgb(255, 72, 72);
+    grid-area: 2 / 1 / 3 / 3;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    border-radius: 64px;
+    border: 2px solid black;
+}
+
+.del {
+    cursor: pointer;
+    background-color: rgb(255, 143, 143);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    grid-area: 2 / 3 / 3 / 4;
+    border-radius: 64px;
+    border: 2px solid black;
+}
+
+#delete {
+    height: 32px;
+    width: 32px;
+}
+
+.equal {
+    cursor: pointer;
+    background-color: rgb(75, 211, 98);
+    grid-area: 6 / 4 / 7 / 5;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    border-radius: 50%;
+    width: 68px;
+    border: 2px solid black;
+
+}
+
+.num1 {
+    cursor: pointer;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    grid-area: 3 / 1 / 4 / 2;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    border-radius: 50%;
+    border: 2px solid black;
+    width: 68px;
+
+}
+
+.num2 {
+    cursor: pointer;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    grid-area: 3 / 2 / 4 / 3;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    border-radius: 50%;
+    width: 68px;
+    border: 2px solid black;
+}
+
+.num3 {
+    cursor: pointer;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    grid-area: 3 / 3 / 4 / 4;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 50%;
+    height: 64px;
+    width: 68px;
+}
+
+.sum {
+    cursor: pointer;
+    background-color: rgb(51, 49, 49);
+    font-size: 32px;
+    color: rgb(75, 211, 98);
+    grid-area: 2 / 4 / 3 / 5;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    border-radius: 50%;
+    border: 2px solid black;
+    width: 68px;
+}
+
+.num4 {
+    cursor: pointer;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    grid-area: 4 / 1 / 5 / 2;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 2px solid black;
+    justify-content: center;
+    border-radius: 50%;
+    height: 64px;
+    width: 68px;
+
+}
+
+.num5 {
+    cursor: pointer;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    grid-area: 4 / 2 / 5 / 3;
+    display: flex;
+    text-align: center;
+    border: 2px solid black;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    height: 64px;
+    width: 68px;
+}
+
+.num6 {
+    cursor: pointer;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    grid-area: 4 / 3 / 5 / 4;
+    display: flex;
+    text-align: center;
+    border: 2px solid black;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    height: 64px;
+    width: 68px;
+}
+
+.sub {
+    cursor: pointer;
+    background-color: rgb(51, 49, 49);
+    font-size: 32px;
+    color: rgb(75, 211, 98);
+    grid-area: 3 / 4 / 4 / 5;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 2px solid black;
+    justify-content: center;
+
+    border-radius: 50%;
+    height: 64px;
+    width: 68px;
+}
+
+.num7 {
+    cursor: pointer;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    grid-area: 5 / 1 / 6 / 2;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+
+    border-radius: 50%;
+    border: 2px solid black;
+    width: 68px;
+
+}
+
+.num8 {
+    cursor: pointer;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    grid-area: 5 / 2 / 6 / 3;
+    display: flex;
+    text-align: center;
+    border: 2px solid black;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    height: 64px;
+    width: 68px;
+}
+
+.num9 {
+    cursor: pointer;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    grid-area: 5 / 3 / 6 / 4;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+
+    border-radius: 50%;
+    border: 2px solid black;
+    width: 68px;
+}
+
+.mult {
+    cursor: pointer;
+    background-color: rgb(51, 49, 49);
+    font-size: 32px;
+    color: rgb(75, 211, 98);
+    grid-area: 4 / 4 / 5 / 5;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+
+    border-radius: 50%;
+    height: 64px;
+    width: 68px;
+}
+
+.num0 {
+    cursor: pointer;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    grid-area: 6 / 1 / 7 / 3;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 2px solid black;
+    justify-content: center;
+
+    border-radius: 64px;
+    height: 64px;
+
+}
+
+.point {
+    cursor: pointer;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    grid-area: 6 / 3 / 7 / 4;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 2px solid black;
+    justify-content: center;
+
+    border-radius: 64px;
+    height: 64px;
+
+}
+
+.division {
+    cursor: pointer;
+    background-color: rgb(51, 49, 49);
+    font-size: 32px;
+    color: rgb(75, 211, 98);
+    grid-area: 5 / 4 / 6 / 5;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 2px solid black;
+    justify-content: center;
+
+    border-radius: 50%;
+    height: 64px;
+    width: 68px;
+}
+
+.calc-field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 524px;
+    background-color: rgb(40, 40, 40);
+    border-radius: 24px;
+    border: 2px solid black;
+    margin-top: 56px;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
