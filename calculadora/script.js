@@ -34,9 +34,6 @@ document.querySelectorAll('.painel > div').forEach(function (div) { //aqui pegue
 
 
 
-
-
-
         switch (actionButton) {
             case 'multiply':
                 if (displayText.value.length == 1 && displayText.value == 0) {
@@ -125,13 +122,20 @@ document.querySelectorAll('.painel > div').forEach(function (div) { //aqui pegue
                 break;
             case '.':
                 displayText.value += '.'
+
                 break;
             default:
 
                 break;
         }
 
+
     });
 })
 
 
+let cores = ['vermelho', 'azul', 'verde', 'cinza', 'rosa'];
+
+cores.push('preto');
+
+console.log(cores, 'cores')
