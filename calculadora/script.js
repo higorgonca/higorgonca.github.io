@@ -31,7 +31,7 @@ document.querySelectorAll('.painel > div').forEach(function (div) { //aqui pegue
             if (operadoresAritmeticos.includes(lastCharOnDisplay)) {
                 displayText.value = displayText.value.substring(0, displayText.value.length - 1);
                 let result = eval(displayText.value);
-                displayText.value = result.replace(/./g, ',');
+                displayText.value = result;
             } else {
                 let result = eval(displayText.value);
                 displayText.value = result;
@@ -39,6 +39,8 @@ document.querySelectorAll('.painel > div').forEach(function (div) { //aqui pegue
                     displayText.value = "0";
                 }
             };
+
+            displayText.value = Number(displayText.value).toFixed(2);
 
             displayText.value = displayText.value.replace(/\./g, ',');
         }
