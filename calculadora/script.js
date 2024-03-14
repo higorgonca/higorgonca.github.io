@@ -40,7 +40,10 @@ document.querySelectorAll('.painel > div').forEach(function (div) { //aqui pegue
                 }
             };
 
-            displayText.value = Number(displayText.value).toFixed(2);
+            if (displayText.value.split(".").length > 1) {
+                displayText.value = Number(displayText.value).toFixed(2);
+            }
+
 
             displayText.value = displayText.value.replace(/\./g, ',');
         }
