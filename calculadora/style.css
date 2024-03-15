@@ -20,7 +20,10 @@
     max-width: 300px;
 }
 
+
+
 div {
+    appearance: none;
     user-select: none;
     margin: 1px;
     font-size: 32px;
@@ -74,6 +77,7 @@ div {
     grid-area: 2 / 3 / 3 / 4;
     border-radius: 64px;
     border: 2px solid black;
+
 }
 
 #delete {
@@ -96,7 +100,7 @@ div {
 
 }
 
-.num1 {
+#num1 {
     cursor: pointer;
     background-color: rgb(54, 54, 54);
     color: white;
@@ -112,7 +116,7 @@ div {
 
 }
 
-.num2 {
+#num2 {
     cursor: pointer;
     background-color: rgb(54, 54, 54);
     color: white;
@@ -127,7 +131,7 @@ div {
     border: 2px solid black;
 }
 
-.num3 {
+#num3 {
     cursor: pointer;
     background-color: rgb(54, 54, 54);
     color: white;
@@ -142,7 +146,7 @@ div {
     width: 68px;
 }
 
-.sum {
+#sum {
     cursor: pointer;
     background-color: rgb(51, 49, 49);
     font-size: 32px;
@@ -158,7 +162,7 @@ div {
     width: 68px;
 }
 
-.num4 {
+#num4 {
     cursor: pointer;
     background-color: rgb(54, 54, 54);
     color: white;
@@ -174,7 +178,7 @@ div {
 
 }
 
-.num5 {
+#num5 {
     cursor: pointer;
     background-color: rgb(54, 54, 54);
     color: white;
@@ -190,7 +194,7 @@ div {
     width: 68px;
 }
 
-.num6 {
+#num6 {
     cursor: pointer;
     background-color: rgb(54, 54, 54);
     color: white;
@@ -206,7 +210,7 @@ div {
     width: 68px;
 }
 
-.sub {
+#sub {
     cursor: pointer;
     background-color: rgb(51, 49, 49);
     font-size: 32px;
@@ -223,7 +227,7 @@ div {
     width: 68px;
 }
 
-.num7 {
+#num7 {
     cursor: pointer;
     background-color: rgb(54, 54, 54);
     color: white;
@@ -240,7 +244,7 @@ div {
 
 }
 
-.num8 {
+#num8 {
     cursor: pointer;
     background-color: rgb(54, 54, 54);
     color: white;
@@ -256,7 +260,7 @@ div {
     width: 68px;
 }
 
-.num9 {
+#num9 {
     cursor: pointer;
     background-color: rgb(54, 54, 54);
     color: white;
@@ -272,7 +276,7 @@ div {
     width: 68px;
 }
 
-.mult {
+#mult {
     cursor: pointer;
     background-color: rgb(51, 49, 49);
     font-size: 32px;
@@ -289,7 +293,7 @@ div {
     width: 68px;
 }
 
-.num0 {
+#num0 {
     cursor: pointer;
     background-color: rgb(54, 54, 54);
     color: white;
@@ -305,7 +309,7 @@ div {
 
 }
 
-.point {
+#point {
     cursor: pointer;
     background-color: rgb(54, 54, 54);
     color: white;
@@ -321,7 +325,7 @@ div {
 
 }
 
-.division {
+#division {
     cursor: pointer;
     background-color: rgb(51, 49, 49);
     font-size: 32px;

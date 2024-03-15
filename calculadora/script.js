@@ -23,29 +23,39 @@ document.querySelectorAll('.painel > div').forEach(function (div) { //aqui pegue
 
 
         function equalResult() {
-            displayText.value = displayText.value.replace(/÷/g, '/');
-            displayText.value = displayText.value.replace(/x/g, '*');
-            displayText.value = displayText.value.replace(/,/g, '.');
+            if (displayText.value != "") {
+                displayText.value = displayText.value.replace(/÷/g, '/');
+                displayText.value = displayText.value.replace(/x/g, '*');
+                displayText.value = displayText.value.replace(/,/g, '.');
 
-
-            if (operadoresAritmeticos.includes(lastCharOnDisplay)) {
-                displayText.value = displayText.value.substring(0, displayText.value.length - 1);
-                let result = eval(displayText.value);
-                displayText.value = result;
-            } else {
-                let result = eval(displayText.value);
-                displayText.value = result;
-                if (displayText.value.length == 1 && displayText.value == 0) {
-                    displayText.value = "0";
+                if (operadoresAritmeticos.includes(lastCharOnDisplay) && displayText.value.length == 4) {
+                    displayText.value = ""
                 }
-            };
 
-            if (displayText.value.split(".").length > 1) {
-                displayText.value = Number(displayText.value).toFixed(2);
+
+                if (operadoresAritmeticos.includes(lastCharOnDisplay)) {
+                    if (displayText.value.length > 1) {
+                        displayText.value = displayText.value.substring(0, displayText.value.length - 1);
+                        let result = eval(displayText.value);
+                        displayText.value = result;
+                    } else {
+                        displayText.value = "";
+                    }
+                } else {
+                    let result = eval(displayText.value);
+                    displayText.value = result;
+                    if (displayText.value.length == 1 && displayText.value == 0) {
+                        displayText.value = "0";
+                    }
+                };
+
+                if (displayText.value.split(".").length > 1) {
+                    displayText.value = Number(displayText.value).toFixed(2);
+                }
+
+
+                displayText.value = displayText.value.replace(/\./g, ',');
             }
-
-
-            displayText.value = displayText.value.replace(/\./g, ',');
         }
 
 
@@ -62,78 +72,50 @@ document.querySelectorAll('.painel > div').forEach(function (div) { //aqui pegue
             switch (actionButton) {
                 case '*':
 
-                    if (displayText.value.length == 1 && displayText.value == 0) {
-                        displayText.value = '0'
-                    } else displayText.value += 'x'
+                    displayText.value += 'x'
                     break;
                 case '1':
-                    if (displayText.value.length == 1 && displayText.value == 0) {
-                        displayText.value = '1'
-                    } else displayText.value += '1'
+                    displayText.value += '1'
 
                     break;
                 case 'clear':
                     displayText.value = ''
                     break;
                 case '2':
-                    if (displayText.value.length == 1 && displayText.value == 0) {
-                        displayText.value = '2'
-                    } else displayText.value += '2'
+                    displayText.value += '2'
                     break;
                 case '3':
-                    if (displayText.value.length == 1 && displayText.value == 0) {
-                        displayText.value = '3'
-                    } else displayText.value += '3'
+                    displayText.value += '3'
                     break;
                 case '4':
-                    if (displayText.value.length == 1 && displayText.value == 0) {
-                        displayText.value = '4'
-                    } else displayText.value += '4'
+                    displayText.value += '4'
                     break;
                 case '5':
-                    if (displayText.value.length == 1 && displayText.value == 0) {
-                        displayText.value = '5'
-                    } else displayText.value += '5'
+                    displayText.value += '5'
                     break;
                 case '6':
-                    if (displayText.value.length == 1 && displayText.value == 0) {
-                        displayText.value = '6'
-                    } else displayText.value += '6'
+                    displayText.value += '6'
                     break;
                 case '7':
-                    if (displayText.value.length == 1 && displayText.value == 0) {
-                        displayText.value = '7'
-                    } else displayText.value += '7'
+                    displayText.value += '7'
                     break;
                 case '8':
-                    if (displayText.value.length == 1 && displayText.value == 0) {
-                        displayText.value = '8'
-                    } else displayText.value += '8'
+                    displayText.value += '8'
                     break;
                 case '9':
-                    if (displayText.value.length == 1 && displayText.value == 0) {
-                        displayText.value = '9'
-                    } else displayText.value += '9'
+                    displayText.value += '9'
                     break;
                 case '0':
-                    if (displayText.value.length == 1 && displayText.value == 0) {
-                        displayText.value = '0'
-                    } else displayText.value += '0'
+                    displayText.value += '0'
                     break;
                 case '+':
-                    if (displayText.value.length == 1 && displayText.value == 0) {
-                        displayText.value = '+'
-                    } else displayText.value += '+'
+                    displayText.value += '+'
                     break;
                 case '-':
-                    if (displayText.value.length == 1 && displayText.value == 0) {
-                        displayText.value = '-'
-                    } else displayText.value += '-'
+                    displayText.value += '-'
                     break;
                 case '/':
-                    if (displayText.value.length == 1 && displayText.value == 0) {
-                        displayText.value = '0'
-                    } else displayText.value += '÷'
+                    displayText.value += '÷'
                     break;
                 case 'equal':
                     equalResult()
