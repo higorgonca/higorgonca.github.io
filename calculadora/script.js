@@ -19,9 +19,6 @@ document.querySelectorAll('.painel > div').forEach(function (div) { //aqui pegue
         const actionButton = e.target.attributes['action'].value;
         const displayText = document.querySelector('#display');
 
-
-
-
         function equalResult() {
             if (displayText.value != "") {
                 displayText.value = displayText.value.replace(/÷/g, '/');
@@ -71,12 +68,10 @@ document.querySelectorAll('.painel > div').forEach(function (div) { //aqui pegue
 
             switch (actionButton) {
                 case '*':
-
                     displayText.value += 'x'
                     break;
                 case '1':
                     displayText.value += '1'
-
                     break;
                 case 'clear':
                     displayText.value = ''
@@ -115,16 +110,13 @@ document.querySelectorAll('.painel > div').forEach(function (div) { //aqui pegue
                     displayText.value += '-'
                     break;
                 case '/':
-                    displayText.value += '÷'
+                    displayText.value += '÷';
                     break;
                 case 'equal':
                     equalResult()
-
-
                     break;
                 case 'delete':
                     displayText.value = displayText.value.substring(0, displayText.value.length - 1)
-
                     break;
                 case '.':
                     if (displayText.value == '') {
