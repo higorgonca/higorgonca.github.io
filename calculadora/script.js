@@ -55,7 +55,6 @@ document.querySelectorAll('.painel > div').forEach(function (div) { //aqui pegue
             }
         }
 
-
         let isNumber = !operadoresAritmeticos.includes(actionButton);
 
         if (isNumber ||
