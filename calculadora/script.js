@@ -118,11 +118,11 @@ document.querySelectorAll('.painel > div').forEach(function (div) { //aqui pegue
                     displayText.value = displayText.value.substring(0, displayText.value.length - 1)
                     break;
                 case '.':
-                    if (displayText.value == '') {
-                        displayText.value = '0,'
-                    } else {
-                        displayText.value += ','
-                    }
+                        if (displayText.value == '') {
+                            displayText.value = '0,'
+                        } else {
+                            displayText.value += ','
+                        }
 
                     break;
                 default:
@@ -130,6 +130,7 @@ document.querySelectorAll('.painel > div').forEach(function (div) { //aqui pegue
                     break;
             }
         }
+        
 
         displayText.scrollLeft = displayText.scrollWidth
 
